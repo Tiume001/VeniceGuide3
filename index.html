@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venice Audio Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Premium Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <h1 class="loader-logo">Venice Guide</h1>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <div class="background-overlay"></div>
+
+    <!-- Login Section -->
+    <section id="login-section" class="active-section">
+        <div class="glass-card login-card">
+            <h1 id="login-title">Welcome to Venice</h1>
+            <p class="subtitle">Audio Guide Experience</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Username" required autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required
+                        autocomplete="current-password">
+                </div>
+                <div id="login-error" class="error-message"></div>
+                <button type="submit" id="login-btn">Enter</button>
+            </form>
+            <div class="language-selector-login">
+                <!-- Lang buttons injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Main App Section -->
+    <section id="app-section" class="hidden">
+        <header class="glass-header">
+            <div class="logo">Venice Guide</div>
+            <div class="header-controls">
+                <!-- Progress container removed -->
+                <div class="custom-lang-selector" id="custom-lang-selector">
+                    <div class="selected-lang">
+                        <span id="current-lang-text">English</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="lang-dropdown">
+                        <div class="lang-option" data-value="en">English</div>
+                        <div class="lang-option" data-value="it">Italiano</div>
+                        <div class="lang-option" data-value="de">Deutsch</div>
+                        <div class="lang-option" data-value="fr">Français</div>
+                        <div class="lang-option" data-value="es">Español</div>
+                        <div class="lang-option" data-value="pt">Português</div>
+                    </div>
+                </div>
+                <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> <span
+                        id="logout-text">Logout</span></button>
+            </div>
+        </header>
+
+        <main id="dashboard-view" class="view active-view">
+            <div class="dashboard-controls">
+                <h2 id="dashboard-title">Select an Attraction</h2>
+                <div class="filter-controls">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search attractions...">
+                    </div>
+                    <button id="favorites-toggle" class="glass-btn-small" title="Show Favorites Only">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="attractions-grid" id="attractions-grid">
+                <!-- Attraction cards injected here -->
+            </div>
+        </main>
+
+        <main id="detail-view" class="view hidden">
+            <button id="back-btn" class="glass-btn"><i class="fas fa-arrow-left"></i> Back</button>
+            <div class="detail-content glass-card">
+                <div class="detail-image-container">
+                    <img id="detail-image" src="" alt="Attraction">
+                </div>
+                <div class="detail-info">
+                    <h2 id="detail-title">Title</h2>
+                    <p id="detail-desc">Description</p>
+
+                    <div id="audio-container" class="audio-section">
+                        <!-- Audio players will be injected here -->
+                    </div>
+
+                    <div class="download-section">
+                        <a id="detail-pdf" href="#" target="_blank" class="download-btn">
+                            <i class="fas fa-file-pdf"></i> Download PDF Guide
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- Sticky Audio Player -->
+    <div id="sticky-audio-player" class="glass-audio-player hidden">
+        <div class="audio-info">
+            <span id="sticky-title">Audio Guide</span>
+            <div class="audio-controls-mini">
+                <button id="sticky-play-btn"><i class="fas fa-play"></i></button>
+                <button id="sticky-close-btn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="audio-progress-container">
+            <div id="sticky-progress-bar"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
