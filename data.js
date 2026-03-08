@@ -467,7 +467,7 @@ const translations = {
                     "assets/burano_ted2.mp3", 
                     "assets/burano_ted3.mp3"
                 ],
-                "pdf": "assets/gondola_en.pdf",
+                "pdf": "assets/burano_ted.pdf",
                 "image": "assets/burano.jpg"
             }
         }
