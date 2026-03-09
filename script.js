@@ -170,12 +170,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { threshold: 0.1 });
 
-        // Hide Preloader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
+        // Hide Preloader robustly
+        const hidePreloader = () => {
+            if (preloader && !preloader.classList.contains('fade-out')) {
                 preloader.classList.add('fade-out');
-            }, 1000);
+            }
+        };
+
+        window.addEventListener('load', () => {
+            setTimeout(hidePreloader, 1000);
         });
+
+        // Fallback: ensure preloader hides after 2.5 seconds maximum
+        setTimeout(hidePreloader, 2500);
 
         // Initialize Magnetic Buttons
         initMagneticButtons();
