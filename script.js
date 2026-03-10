@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function init() {
         // Init Theme
-        const currentTheme = localStorage.getItem('venice_theme');
+        const currentTheme = localStorage.getItem('venice_theme') || 'light';
         if (currentTheme === 'light') {
             document.body.classList.add('light-theme');
             themeIcon.classList.remove('fa-moon');
@@ -234,6 +234,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Navigation System ---
     function switchView(viewToShow) {
+        if (viewToShow === detailView) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
         const views = document.querySelectorAll('.view');
 
         // Find current active view
@@ -474,6 +480,10 @@ document.addEventListener('DOMContentLoaded', () => {
             window.currentAttractionId = hash;
             renderDetail(hash);
             switchView(detailView);
+
+            // Scroll right side container to top for mobile
+            const detailInfo = document.querySelector('.detail-info');
+            if (detailInfo) detailInfo.scrollTop = 0;
         } else {
             // Show dashboard and reset state
             window.currentAttractionId = null;
