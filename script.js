@@ -481,9 +481,12 @@ document.addEventListener('DOMContentLoaded', () => {
             renderDetail(hash);
             switchView(detailView);
 
-            // Scroll right side container to top for mobile
-            const detailInfo = document.querySelector('.detail-info');
-            if (detailInfo) detailInfo.scrollTop = 0;
+            // Scroll right side container to top for mobile and desktop
+            // Needs a timeout because display:none elements cannot be scrolled
+            setTimeout(() => {
+                const detailInfo = document.querySelector('.detail-info');
+                if (detailInfo) detailInfo.scrollTop = 0;
+            }, 450);
         } else {
             // Show dashboard and reset state
             window.currentAttractionId = null;
