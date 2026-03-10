@@ -47,10 +47,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const dashboardTitle = document.getElementById('dashboard-title');
     const logoutText = document.getElementById('logout-text');
 
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('i');
+
     // --- Initialization ---
     init();
 
     function init() {
+        // Init Theme
+        const currentTheme = localStorage.getItem('venice_theme');
+        if (currentTheme === 'light') {
+            document.body.classList.add('light-theme');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            const isLight = document.body.classList.contains('light-theme');
+
+            if (isLight) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('venice_theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('venice_theme', 'dark');
+            }
+        });
+
         // Set initial language in selector
         updateLanguageUI();
         updateStaticTexts();
