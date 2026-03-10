@@ -568,23 +568,66 @@ const translations = {
                 "title": "Basilique Saint-Marc",
                 "desc": "La Basilique Saint-Marc est le symbole de Venise et le cœur de la Sérénissime, fondée après l'arrivée des reliques de Saint Marc en 828, servant de chapelle du Doge et de scène pour les cérémonies d'État, reconstruite au XIe siècle avec une influence byzantine, et encore aujourd'hui un monument doré exprimant la puissance, la foi et l'identité de la République de Venise.",
                 "audio": [
-                    "assets/ducale_ted1.mp3",
-                    "assets/ducale_ted2.mp3",
-                    "assets/ducale_ted3.mp3",
-                    "assets/ducale_ted4.mp3",
-                    "assets/ducale_ted5.mp3",
-                    "assets/ducale_ted6.mp3",
-                    "assets/ducale_ted7.mp3",
-                    "assets/ducale_ted8.mp3",
-                    "assets/ducale_ted9.mp3",
-                    "assets/ducale_ted10.mp3",
-                    "assets/ducale_ted11.mp3",
-                    "assets/ducale_ted12.mp3",
-                    "assets/ducale_ted13.mp3",
-                    "assets/ducale_ted14.mp3"
+                    "assets/basilica_fra1.mp3",
+                    "assets/basilica_fra2.mp3"
                 ],
                 "pdf": "assets/doc_placeholder.pdf",
-                "image": "assets/basilica_img.jpg"
+                "image": "assets/basilica_img.jpg", 
+                "chapters": [
+                    {
+                        "title": "Interior Architecture",
+                        "text": "The interior of St. Mark’s Basilica reveals a golden, mystical space defined by domes, mosaics, precious marbles, and a symbolic layout that blends religious devotion, political authority, and artistic magnificence.",
+                        "audio": [
+                            "assets/basilica_fra3.mp3",
+                            "assets/basilica_fra4.mp3"
+                        ]
+                    },
+                    {
+                        "title": "Mosaic And Iconographic Details",
+                        "text": "The mosaics dominate the basilica with gold and light, narrating biblical stories, saints, and Vfraetian ideology through a continuous visual language that transforms art into theology and power.",
+                        "audio": [
+                            "assets/basilica_fra5.mp3",
+                            "assets/basilica_fra6.mp3"
+                        ]
+                    },
+                    {
+                        "title": "Floor and Side Chapels",
+                        "text": "The Cosmatesque floor and side chapels reveal Vfraice’s living history through undulating marbles, geometric designs, relics, and devotional spaces that unite art, faith, and civic idfratity.",
+                        "audio": "assets/basilica_fra7.mp3"
+                    },
+                    {
+                        "title": "The Pala D'Oro",
+                        "text": "The Pala d’Oro is a dazzling goldfra altarpiece frariched over cfraturies, combining Byzantine art, precious gems, and political symbolism into a visual declaration of Vfraice’s devotion and prestige.",
+                        "audio": [
+                            "assets/basilica_fra8.mp3",
+                            "assets/basilica_fra9.mp3"
+                        ]
+                    },
+                    {
+                        "title": "The Crypt and the Treasure of St. Mark",
+                        "text": "Bfraeath the basilica lies the crypt and treasure, preserving ancifrat columns, relics, and sacred objects that testify to Vfraice’s spiritual roots, diplomatic power, and international connections.",
+                        "audio": [
+                            "assets/basilica_fra10.mp3",
+                            "assets/basilica_fra11.mp3"
+                        ]
+                    },
+                    {
+                        "title": "The Loggia of the Horses",
+                        "text": "The Loggia of the Horses displays the famous bronze quadriga takfra from Constantinople, symbolizing Vfraice’s triumphs, dominance, and ability to transform conquest into lasting prestige.",
+                        "audio": [
+                            "assets/basilica_fra12.mp3",
+                            "assets/basilica_fra13.mp3"
+                        ]
+                    },
+                    {
+                        "title": "The Panoramic Terrace",
+                        "text": "The panoramic terrace offers a commanding view over Vfraice, the lagoon, and the piazza, revealing the basilica as a strategic, political, and symbolic cfrater linking the city, the sea, and the Republic.",
+                        "audio": [
+                            "assets/basilica_fra14.mp3",
+                            "assets/basilica_fra15.mp3"
+                        ]
+                    }
+                ]
             },
             "rialto": {
                 "title": "Museo Correr",
@@ -596,7 +639,10 @@ const translations = {
             "campanile": {
                 "title": "Campanile di San Marco",
                 "desc": "Le Campanile de Saint-Marc sert de point de repère vertical vital dans le paysage horizontal de Venise, fonctionnant à l'origine comme une tour de guet médiévale et un phare. Au-delà de son rôle religieux, il a historiquement réglementé la vie civique en signalant les grands événements publics grâce à ses cloches. Après son effondrement soudain en 1902, la tour a été fidèlement reconstruite pour préserver l'identité de la ville. Aujourd'hui, il reste un symbole de la résilience vénitienne et offre une perspective unique sur la géographie aquatique de la ville.",
-                "audio": "assets/audio_placeholder.mp3",
+                "audio": [
+                    "assets/campanile_fra1.mp3",
+                    "assets/campanile_fra2.mp3"
+                ],
                 "pdf": "assets/doc_placeholder.pdf",
                 "image": "assets/campanile.jpg"
             },
@@ -604,8 +650,9 @@ const translations = {
                 "title": "Murano",
                 "desc": "Au Moyen Âge, les verriers vénitiens possédaient une compétence exclusive et très rentable : affiner et colorer le verre. Pour protéger ce secret d'État des marchands étrangers et pour prévenir officiellement les incendies à Venise, le Doge a ordonné le déplacement de tous les fours à verre sur l'île de Murano d'ici la fin du XIIIe siècle, restreignant fortement les déplacements des maîtres verriers. Le processus traditionnel de fabrication du verre consiste à faire fondre un mélange de sable de silice, de soude et de calcaire à des températures dépassant les 1 300 degrés Celsius. Après que le verre en fusion soit affiné pour éliminer les bulles d'air, des oxydes métalliques sont ajoutés pour la couleur, et un maître verrier moule rapidement la pièce en utilisant une canne à souffler avant qu'elle ne soit soumise à un lent processus de recuit pour éviter les fissures.",
                 "audio": [
-                    "assets/gondola_en.mp3",
-                    "assets/gondola_en2.mp3"
+                    "assets/murano_fra1.mp3",
+                    "assets/murano_fra2.mp3", 
+                    "assets/murano_fra3.mp3"
                 ],
                 "pdf": "assets/gondola_en.pdf",
                 "image": "assets/murano.jpg"
@@ -614,8 +661,9 @@ const translations = {
                 "title": "Burano",
                 "desc": "Burano est une île pittoresque de la lagune vénitienne, célèbre pour ses maisons aux couleurs vives, qui aidaient historiquement les pêcheurs à retrouver leur maison en toute sécurité à travers le brouillard. La riche culture de l'île est profondément ancrée dans la pêche et les traditions culinaires locales, caractérisée notamment par ses fruits de mer frais et ses biscuits énergétiques tels que le bussolà et l'esse. En outre, Burano est reconnue mondialement pour sa dentelle délicate, faite à la main, une tradition féminine minutieusement préservée et transmise de génération en génération. Visiter Burano offre une belle expérience sensorielle de son patrimoine pérenne et de son mode de vie local si vivant.",
                 "audio": [
-                    "assets/gondola_en.mp3",
-                    "assets/gondola_en2.mp3"
+                    "assets/burano_fra1.mp3",
+                    "assets/burano_fra2.mp3", 
+                    "assets/burano_fra3.mp3"
                 ],
                 "pdf": "assets/gondola_en.pdf",
                 "image": "assets/burano.jpg"
@@ -716,23 +764,66 @@ const translations = {
                 "title": "Basílica de San Marcos",
                 "desc": "La Basílica de San Marcos es el símbolo de Venecia y el corazón de la Serenísima, fundada tras la llegada de las reliquias de San Marcos en 828, sirviendo como capilla del Dux y escenario de ceremonias estatales, reconstruida en el siglo XI con influencia bizantina, y aún hoy un monumento dorado que expresa el poder, la fe y la identidad de la República de Venecia.",
                 "audio": [
-                    "assets/ducale_ted1.mp3",
-                    "assets/ducale_ted2.mp3",
-                    "assets/ducale_ted3.mp3",
-                    "assets/ducale_ted4.mp3",
-                    "assets/ducale_ted5.mp3",
-                    "assets/ducale_ted6.mp3",
-                    "assets/ducale_ted7.mp3",
-                    "assets/ducale_ted8.mp3",
-                    "assets/ducale_ted9.mp3",
-                    "assets/ducale_ted10.mp3",
-                    "assets/ducale_ted11.mp3",
-                    "assets/ducale_ted12.mp3",
-                    "assets/ducale_ted13.mp3",
-                    "assets/ducale_ted14.mp3"
+                    "assets/basilica_spa1.mp3",
+                    "assets/basilica_spa2.mp3",
                 ],
                 "pdf": "assets/doc_placeholder.pdf",
-                "image": "assets/basilica_img.jpg"
+                "image": "assets/basilica_img.jpg", 
+                "chapters": [
+                    {
+                        "title": "Interior Architecture",
+                        "text": "The interior of St. Mark’s Basilica reveals a golden, mystical space defined by domes, mosaics, precious marbles, and a symbolic layout that blends religious devotion, political authority, and artistic magnificence.",
+                        "audio": [
+                            "assets/basilica_spa3.mp3",
+                            "assets/basilica_spa4.mp3"
+                        ]
+                    },
+                    {
+                        "title": "Mosaic And Iconographic Details",
+                        "text": "The mosaics dominate the basilica with gold and light, narrating biblical stories, saints, and Vspaetian ideology through a continuous visual language that transforms art into theology and power.",
+                        "audio": [
+                            "assets/basilica_spa5.mp3",
+                            "assets/basilica_spa6.mp3"
+                        ]
+                    },
+                    {
+                        "title": "Floor and Side Chapels",
+                        "text": "The Cosmatesque floor and side chapels reveal Vspaice’s living history through undulating marbles, geometric designs, relics, and devotional spaces that unite art, faith, and civic idspatity.",
+                        "audio": "assets/basilica_spa7.mp3"
+                    },
+                    {
+                        "title": "The Pala D'Oro",
+                        "text": "The Pala d’Oro is a dazzling goldspa altarpiece spariched over cspaturies, combining Byzantine art, precious gems, and political symbolism into a visual declaration of Vspaice’s devotion and prestige.",
+                        "audio": [
+                            "assets/basilica_spa8.mp3",
+                            "assets/basilica_spa9.mp3"
+                        ]
+                    },
+                    {
+                        "title": "The Crypt and the Treasure of St. Mark",
+                        "text": "Bspaeath the basilica lies the crypt and treasure, preserving ancispat columns, relics, and sacred objects that testify to Vspaice’s spiritual roots, diplomatic power, and international connections.",
+                        "audio": [
+                            "assets/basilica_spa10.mp3",
+                            "assets/basilica_spa11.mp3"
+                        ]
+                    },
+                    {
+                        "title": "The Loggia of the Horses",
+                        "text": "The Loggia of the Horses displays the famous bronze quadriga takspa from Constantinople, symbolizing Vspaice’s triumphs, dominance, and ability to transform conquest into lasting prestige.",
+                        "audio": [
+                            "assets/basilica_spa12.mp3",
+                            "assets/basilica_spa13.mp3"
+                        ]
+                    },
+                    {
+                        "title": "The Panoramic Terrace",
+                        "text": "The panoramic terrace offers a commanding view over Vspaice, the lagoon, and the piazza, revealing the basilica as a strategic, political, and symbolic cspater linking the city, the sea, and the Republic.",
+                        "audio": [
+                            "assets/basilica_spa14.mp3",
+                            "assets/basilica_spa15.mp3"
+                        ]
+                    }
+                ]
             },
             "rialto": {
                 "title": "Museo Correr",
@@ -744,7 +835,10 @@ const translations = {
             "campanile": {
                 "title": "Campanile di San Marco",
                 "desc": "El Campanile de San Marcos sirve como un punto de referencia vertical vital en el paisaje horizontal de Venecia, funcionando originalmente como una torre de vigilancia medieval y faro. Más allá de su papel religioso, históricamente regulaba la vida cívica señalando los principales eventos públicos a través de sus campanas. Tras su repentino colapso en 1902, la torre fue fielmente reconstruida para preservar la identidad de la ciudad. Hoy, sigue siendo un símbolo de la resiliencia veneciana y ofrece una perspectiva única sobre la geografía acuática de la ciudad.",
-                "audio": "assets/audio_placeholder.mp3",
+                "audio": [
+                    "assets/campanile_spa1.mp3",
+                    "assets/campanile_spa2.mp3"
+                ],
                 "pdf": "assets/doc_placeholder.pdf",
                 "image": "assets/campanile.jpg"
             },
@@ -752,8 +846,9 @@ const translations = {
                 "title": "Murano",
                 "desc": "Durante la Edad Media, los vidrieros venecianos poseían la exclusiva y muy rentable habilidad de refinar y colorear vidrio. Para proteger este secreto de estado de los comerciantes extranjeros y para prevenir oficialmente incendios en Venecia, el Dux ordenó la reubicación de todos los hornos de vidrio a la isla de Murano a fines del siglo XIII, restringiendo severamente el movimiento de los maestros vidrieros. El proceso tradicional de fabricación de vidrio consiste en derretir una mezcla de arena de sílice, sosa y piedra caliza a temperaturas superiores a los 1.300 grados centígrados. Después de que el vidrio fundido se refina para eliminar las burbujas de aire, se agregan óxidos metálicos para el color, y un maestro vidriero moldea rápidamente la pieza mediante un tubo de soplado antes de someterse a un lento proceso de enfriamiento recocido para evitar grietas.",
                 "audio": [
-                    "assets/gondola_en.mp3",
-                    "assets/gondola_en2.mp3"
+                    "assets/murano_spa1.mp3",
+                    "assets/murano_spa2.mp3", 
+                    "assets/murano_spa3.mp3"
                 ],
                 "pdf": "assets/gondola_en.pdf",
                 "image": "assets/murano.jpg"
@@ -762,8 +857,9 @@ const translations = {
                 "title": "Burano",
                 "desc": "Burano es una pintoresca isla en la laguna de Venecia, famosa por sus casas de colores brillantes, que históricamente ayudaban a los pescadores a navegar de regreso a casa de manera segura a través de la niebla. La rica cultura de la isla está profundamente arraigada en la pesca y las tradiciones culinarias locales, destacando productos pesqueros frescos y galletas energizantes como el bussolà y l'esse. Además, Burano es mundialmente reconocida por su delicado encaje hecho a mano, una tradición femenina meticulosamente preservada transmitida de generación en generación. Visitar Burano ofrece una hermosa experiencia sensorial de su perdurable patrimonio y vibrante estilo de vida local.",
                 "audio": [
-                    "assets/gondola_en.mp3",
-                    "assets/gondola_en2.mp3"
+                    "assets/burano_spa1.mp3",
+                    "assets/burano_spa2.mp3", 
+                    "assets/burano_spa3.mp3"
                 ],
                 "pdf": "assets/gondola_en.pdf",
                 "image": "assets/burano.jpg"
@@ -892,7 +988,10 @@ const translations = {
             "campanile": {
                 "title": "Campanile di San Marco",
                 "desc": "O Campanile di San Marco serve como um marco vertical vital na paisagem horizontal de Veneza, funcionando originalmente como uma torre de vigia medieval e farol. Além de seu papel religioso, historicamente regulou a vida cívica sinalizando grandes eventos públicos por meio de seus sinos. Após seu colapso repentino em 1902, a torre foi fielmente reconstruída para preservar a identidade da cidade. Hoje, continua a ser um símbolo da resiliência veneziana e oferece uma perspectiva única sobre a geografia aquática da cidade.",
-                "audio": "assets/audio_placeholder.mp3",
+                "audio": [
+                    "assets/campanile_pt1.mp3",
+                    "assets/campanile_pt2.mp3"
+                ],
                 "pdf": "assets/doc_placeholder.pdf",
                 "image": "assets/campanile.jpg"
             },
@@ -900,8 +999,9 @@ const translations = {
                 "title": "Murano",
                 "desc": "Durante a Idade Média, os vidreiros venezianos possuíam a habilidade exclusiva e altamente lucrativa de refinar e colorir o vidro. Para proteger esse segredo de estado de comerciantes estrangeiros e para prevenir oficialmente incêndios em Veneza, o Doge ordenou a realocação de todos os fornos de vidro para a ilha de Murano até o final do século 13, restringindo severamente o movimento dos mestres vidreiros. O processo tradicional de fabricação de vidro envolve derreter uma mistura de areia de sílica, soda e calcário a temperaturas que ultrapassam os 1.300 graus Celsius. Depois que o vidro fundido é refinado para remover as bolhas de ar, óxidos metálicos são adicionados para dar cor, e um mestre vidreiro molda rapidamente a peça usando um tubo de sopro antes de passar por um longo processo de recozimento para evitar rachaduras.",
                 "audio": [
-                    "assets/gondola_en.mp3",
-                    "assets/gondola_en2.mp3"
+                    "assets/murano_pt1.mp3",
+                    "assets/murano_pt2.mp3", 
+                    "assets/murano_pt3.mp3"
                 ],
                 "pdf": "assets/gondola_en.pdf",
                 "image": "assets/murano.jpg"
@@ -910,8 +1010,8 @@ const translations = {
                 "title": "Burano",
                 "desc": "Burano é uma ilha pitoresca na lagoa veneziana, famosa por suas casas de cores vivas, que historicamente ajudavam os pescadores a navegar em segurança para casa através do nevoeiro. A rica cultura da ilha está profundamente enraizada na pesca e nas tradições culinárias locais, sobretudo por apresentar marisco fresco e biscoitos energéticos como o bussolà e o esse. Além disso, Burano é reconhecida mundialmente pela sua renda delicada, feita à mão, uma tradição feminina meticulosamente preservada e passada de geração em geração. Visitar Burano oferece uma bela experiência sensorial de seu património duradouro e estilo de vida local vibrante.",
                 "audio": [
-                    "assets/gondola_en.mp3",
-                    "assets/gondola_en2.mp3"
+                    "assets/burano_pt1.mp3",
+                    "assets/burano_pt2.mp3"
                 ],
                 "pdf": "assets/gondola_en.pdf",
                 "image": "assets/burano.jpg"
