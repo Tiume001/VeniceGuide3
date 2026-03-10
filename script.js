@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Navigation System ---
     function switchView(viewToShow) {
-        if (viewToShow === detailView) {
+        if (viewToShow === detailView && window.innerWidth > 900) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
