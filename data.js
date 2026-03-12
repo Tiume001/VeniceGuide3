@@ -195,7 +195,14 @@ const translations = {
             "rialto": {
                 "title": "Museo Correr",
                 "desc": "The Museo Correr is a civic museum in Venice, Italy, located in St. Mark's Square. It offers a fascinating journey into the art, history, and culture of Venice, starting from the Napoleonic Wing where the museum entrance is located, and continuing through the Procuratie Nuove. The rich collections document various aspects of Venetian life, housing masterpieces ranging from Venetian paintings to classical antiquities.",
-                "audio": "assets/audio_placeholder.mp3",
+                "audio": [
+                    "assets/correr_en1.mp3",
+                    "assets/correr_en2.mp3", 
+                    "assets/correr_en3.mp3", 
+                    "assets/correr_en4.mp3", 
+                    "assets/correr_en5.mp3", 
+                    "assets/correr_en6.mp3"
+                ],
                 "pdf": "assets/correr_en.pdf",
                 "image_light": "assets/correr_light.jpg",
                 "image_dark": "assets/correr.jpg"
@@ -349,7 +356,14 @@ const translations = {
             "rialto": {
                 "title": "Museo Correr",
                 "desc": "Il Museo Correr è un museo civico di Venezia, situato in Piazza San Marco. Offre un affascinante viaggio nell'arte, nella storia e nella cultura della città, a partire dall'Ala Napoleonica fino alle Procuratie Nuove. Le ricche collezioni documentano vari aspetti della vita veneziana, ospitando capolavori che spaziano dai dipinti storici alle antichità classiche e fornendo profonde intuizioni sul glorioso passato della Serenissima.",
-                "audio": "assets/audio_placeholder.mp3",
+                "audio": [
+                    "assets/correr_it1.mp3",
+                    "assets/correr_it2.mp3", 
+                    "assets/correr_it3.mp3", 
+                    "assets/correr_it4.mp3", 
+                    "assets/correr_it5.mp3", 
+                    "assets/correr_it6.mp3"
+                ],
                 "pdf": "assets/correr_ita.pdf",
                 "image_light": "assets/correr_light.jpg",
                 "image_dark": "assets/correr.jpg"
@@ -455,7 +469,15 @@ const translations = {
             "rialto": {
                 "title": "Museo Correr",
                 "desc": "Das Museo Correr ist ein städtisches Museum in Venedig, Italien, das sich am Markusplatz befindet. Es bietet eine faszinierende Reise in die Kunst, Geschichte und Kultur Venedigs, beginnend mit dem Napoleonischen Flügel, in dem sich der Eingang befindet, und weiter durch die Procuratie Nuove. Die reichen Sammlungen dokumentieren verschiedene Aspekte des venezianischen Lebens.",
-                "audio": "assets/audio_placeholder.mp3",
+                "audio": [
+                    "assets/correr_ted1.mp3",
+                    "assets/correr_ted2.mp3", 
+                    "assets/correr_ted3.mp3", 
+                    "assets/correr_ted4.mp3", 
+                    "assets/correr_ted5.mp3", 
+                    "assets/correr_ted6.mp3", 
+                    "assets/correr_ted7.mp3"
+                ],
                 "pdf": "assets/correr_ted.pdf",
                 "image_light": "assets/correr_light.jpg",
                 "image_dark": "assets/correr.jpg"
@@ -658,7 +680,15 @@ const translations = {
             "rialto": {
                 "title": "Museo Correr",
                 "desc": "Le Museo Correr est un musée municipal de Venise, en Italie, situé sur la place Saint-Marc. Il propose un voyage fascinant dans l'art, l'histoire et la culture de Venise, en commençant par l'Aile Napoléonienne où se trouve l'entrée, et en continuant à travers les Procuratie Nuove. Ses riches collections documentent divers aspects de la vie vénitienne et abritent des chefs-d'œuvre de la peinture et de l'antiquité.",
-                "audio": "assets/audio_placeholder.mp3",
+                "audio": [
+                    "assets/correr_fra1.mp3",
+                    "assets/correr_fra2.mp3", 
+                    "assets/correr_fra3.mp3", 
+                    "assets/correr_fra4.mp3", 
+                    "assets/correr_fra5.mp3", 
+                    "assets/correr_fra6.mp3", 
+                    "assets/correr_fra7.mp3"
+                ],
                 "pdf": "assets/correr_fra.pdf",
                 "image_light": "assets/correr_light.jpg",
                 "image_dark": "assets/correr.jpg"
@@ -861,7 +891,15 @@ const translations = {
             "rialto": {
                 "title": "Museo Correr",
                 "desc": "El Museo Correr es un museo cívico de Venecia, Italia, situado en la Plaza de San Marcos. Ofrece un viaje fascinante a la historia, el arte y la cultura de Venecia, comenzando desde el Ala Napoleónica donde se encuentra la entrada, hasta las Procuratie Nuove. Las ricas colecciones documentan diversos aspectos de la vida veneciana, albergando obras maestras que van desde la pintura veneciana hasta las antigüedades clásicas.",
-                "audio": "assets/audio_placeholder.mp3",
+                "audio": [
+                    "assets/correr_es1.mp3",
+                    "assets/correr_es2.mp3", 
+                    "assets/correr_es3.mp3", 
+                    "assets/correr_es4.mp3", 
+                    "assets/correr_es5.mp3", 
+                    "assets/correr_es6.mp3", 
+                    "assets/correr_es7.mp3"
+                ],
                 "pdf": "assets/correr_esp.pdf",
                 "image_light": "assets/correr_light.jpg",
                 "image_dark": "assets/correr.jpg"
@@ -999,29 +1037,80 @@ const translations = {
                 "title": "Basílica de São Marcos",
                 "desc": "A Basílica de São Marcos é o símbolo de Veneza e o coração da Sereníssima, fundada após a chegada das relíquias de São Marcos em 828, servindo como capela do Doge e palco de cerimônias de estado, reconstruída no século XI com influência bizantina, e ainda hoje um monumento dourado que expressa o poder, a fé e a identidade da República de Veneza.",
                 "audio": [
-                    "assets/ducale_ted1.mp3",
-                    "assets/ducale_ted2.mp3",
-                    "assets/ducale_ted3.mp3",
-                    "assets/ducale_ted4.mp3",
-                    "assets/ducale_ted5.mp3",
-                    "assets/ducale_ted6.mp3",
-                    "assets/ducale_ted7.mp3",
-                    "assets/ducale_ted8.mp3",
-                    "assets/ducale_ted9.mp3",
-                    "assets/ducale_ted10.mp3",
-                    "assets/ducale_ted11.mp3",
-                    "assets/ducale_ted12.mp3",
-                    "assets/ducale_ted13.mp3",
-                    "assets/ducale_ted14.mp3"
+                    "assets/basilica_pt1.mp3",
+                    "assets/basilica_pt2.mp3"
                 ],
                 "pdf": "assets/basilica_port.pdf",
                 "image_light": "assets/basilica_img.jpg",
-                "image_dark": "assets/basilica_dark.jpg"
+                "image_dark": "assets/basilica_dark.jpg", 
+                "chapters": [
+                    {
+                        "title": "Interior Architecture",
+                        "text": "The interior of St. Mark’s Basilica reveals a golden, mystical space defined by domes, mosaics, precious marbles, and a symbolic layout that blends religious devotion, political authority, and artistic magnificence.",
+                        "audio": [
+                            "assets/basilica_pt3.mp3",
+                            "assets/basilica_pt4.mp3"
+                        ]
+                    },
+                    {
+                        "title": "Mosaic And Iconographic Details",
+                        "text": "The mosaics dominate the basilica with gold and light, narrating biblical stories, saints, and Vptetian ideology through a continuous visual language that transforms art into theology and power.",
+                        "audio": [
+                            "assets/basilica_pt5.mp3",
+                            "assets/basilica_pt6.mp3"
+                        ]
+                    },
+                    {
+                        "title": "Floor and Side Chapels",
+                        "text": "The Cosmatesque floor and side chapels reveal Vptice’s living history through undulating marbles, geometric designs, relics, and devotional ptces that unite art, faith, and civic idpttity.",
+                        "audio": "assets/basilica_pt7.mp3"
+                    },
+                    {
+                        "title": "The Pala D'Oro",
+                        "text": "The Pala d’Oro is a dazzling goldpt altarpiece ptriched over cptturies, combining Byzantine art, precious gems, and political symbolism into a visual declaration of Vptice’s devotion and prestige.",
+                        "audio": [
+                            "assets/basilica_pt8.mp3",
+                            "assets/basilica_pt9.mp3"
+                        ]
+                    },
+                    {
+                        "title": "The Crypt and the Treasure of St. Mark",
+                        "text": "Bpteath the basilica lies the crypt and treasure, preserving anciptt columns, relics, and sacred objects that testify to Vptice’s spiritual roots, diplomatic power, and international connections.",
+                        "audio": [
+                            "assets/basilica_pt10.mp3",
+                            "assets/basilica_pt11.mp3"
+                        ]
+                    },
+                    {
+                        "title": "The Loggia of the Horses",
+                        "text": "The Loggia of the Horses displays the famous bronze quadriga takpt from Constantinople, symbolizing Vptice’s triumphs, dominance, and ability to transform conquest into lasting prestige.",
+                        "audio": [
+                            "assets/basilica_pt12.mp3",
+                            "assets/basilica_pt13.mp3"
+                        ]
+                    },
+                    {
+                        "title": "The Panoramic Terrace",
+                        "text": "The panoramic terrace offers a commanding view over Vptice, the lagoon, and the piazza, revealing the basilica as a strategic, political, and symbolic cptter linking the city, the sea, and the Republic.",
+                        "audio": [
+                            "assets/basilica_pt14.mp3",
+                            "assets/basilica_pt15.mp3"
+                        ]
+                    }
+                ]
             },
             "rialto": {
                 "title": "Museo Correr",
                 "desc": "O Museo Correr é um museu cívico em Veneza, Itália, localizado na Praça de São Marcos. Ele oferece uma jornada fascinante pela arte, história e cultura de Veneza, começando na Ala Napoleônica onde fica a entrada do museu, e continuando pelas Procuratie Nuove. Suas ricas coleções documentam vários aspectos da vida veneziana, abrigando obras-primas que vão de pinturas venezianas a antiguidades clássicas.",
-                "audio": "assets/audio_placeholder.mp3",
+                "audio": [
+                    "assets/correr_pt1.mp3",
+                    "assets/correr_pt2.mp3", 
+                    "assets/correr_pt3.mp3", 
+                    "assets/correr_pt4.mp3", 
+                    "assets/correr_pt5.mp3", 
+                    "assets/correr_pt6.mp3", 
+                    "assets/correr_pt7.mp3"
+                ],
                 "pdf": "assets/correr_port.pdf",
                 "image_light": "assets/correr_light.jpg",
                 "image_dark": "assets/correr.jpg"
