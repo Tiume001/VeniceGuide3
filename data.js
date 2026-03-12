@@ -10,6 +10,7 @@ const translations = {
         "attractions": {
             "gondola": {
                 "title": "Gondola ride",
+                "coords": { "lat": 45.4336, "lng": 12.3395 },
                 "desc": "The following text invites the reader to rediscover the gondola from its most authentic perspective: not as a tourist symbol, but as an extraordinary functional object shaped by necessity and perfected over centuries. Through its history, technical design, craftsmanship, and symbolism, the gondola emerges as a unique balance of engineering, culture, and everyday Venetian life, capable of telling the story of the city more clearly than any view from above. \nDownload the full PDF below.",
                 "audio": [
                     "assets/gondola_en.mp3",
@@ -21,6 +22,7 @@ const translations = {
             },
             "palazzo_ducale": {
                 "title": "Doge's Palace",
+                "coords": { "lat": 45.4337, "lng": 12.3404 },
                 "desc": "This text introduces the Doge’s Palace as the political and institutional heart of the Venetian Republic, a place where power, governance, and representation converged for centuries. Through its layered history and evolving architecture, the palace reflects the development of Venetian political life and the Republic’s ambition to unite authority, diplomacy, and artistic magnificence into a single monumental symbol.",
                 "audio": "assets/ducale_en.mp3",
                 "pdf": "assets/ducale_en.pdf",

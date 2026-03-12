@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 
 <body>
@@ -86,6 +87,9 @@
                         <i class="fas fa-search"></i>
                         <input type="text" id="search-input" placeholder="Search attractions...">
                     </div>
+                    <button id="map-toggle" class="glass-btn-small map-toggle-btn" title="View Map">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </button>
                     <button id="favorites-toggle" class="glass-btn-small" title="Show Favorites Only">
                         <i class="far fa-heart"></i>
                     </button>
@@ -96,6 +100,13 @@
             </div>
         </main>
 
+
+        <main id="map-view" class="view hidden">
+            <div class="map-container glass-card">
+                <button id="map-back-btn" class="glass-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                <div id="venice-map"></div>
+            </div>
+        </main>
         <main id="detail-view" class="view hidden">
             <div class="detail-content glass-card">
                 <div class="detail-image-container">
@@ -135,6 +146,7 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>

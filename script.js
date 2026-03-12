@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let searchTerm = "";
     let showFavoritesOnly = false;
     let currentAudio = null; // Track currently playing audio
+    let map = null;
+    let markers = [];
+    let isMapView = false;
     let stickyPlayerInterval = null;
 
     // --- DOM Elements ---
@@ -27,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Views
     const dashboardView = document.getElementById('dashboard-view');
+    const mapView = document.getElementById('map-view');
+    const mapToggleBtn = document.getElementById('map-toggle');
+    const mapBackBtn = document.getElementById('map-back-btn');
     const detailView = document.getElementById('detail-view');
     const attractionsGrid = document.getElementById('attractions-grid');
     const backBtn = document.getElementById('back-btn');
@@ -145,6 +151,30 @@ document.addEventListener('DOMContentLoaded', () => {
             currentAudio = null;
         });
 
+        mapToggleBtn.addEventListener('click', () => {
+            isMapView = !isMapView;
+            if (isMapView) {
+                mapToggleBtn.classList.add('active');
+                mapToggleBtn.innerHTML = '<i class="fas fa-th-large"></i>'; // Grid icon
+                switchView(mapView);
+                setTimeout(() => {
+                    if (!map) initMap();
+                    else map.invalidateSize();
+                }, 450); // Fix map render issue when unhidden
+            } else {
+                mapToggleBtn.classList.remove('active');
+                mapToggleBtn.innerHTML = '<i class="fas fa-map-marked-alt"></i>'; // Map icon
+                switchView(dashboardView);
+            }
+        });
+
+        mapBackBtn.addEventListener('click', () => {
+            isMapView = false;
+            mapToggleBtn.classList.remove('active');
+            mapToggleBtn.innerHTML = '<i class="fas fa-map-marked-alt"></i>'; // Map icon
+            switchView(dashboardView);
+        });
+
         favoritesToggle.addEventListener('click', () => {
             showFavoritesOnly = !showFavoritesOnly;
             favoritesToggle.classList.toggle('active', showFavoritesOnly);
@@ -155,6 +185,16 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('input', (e) => {
             searchTerm = e.target.value.toLowerCase().trim();
             renderDashboard();
+        });
+
+        searchInput.addEventListener('focus', () => {
+            const filterControls = document.querySelector('.filter-controls');
+            if (filterControls) filterControls.classList.add('search-focused');
+        });
+
+        searchInput.addEventListener('blur', () => {
+            const filterControls = document.querySelector('.filter-controls');
+            if (filterControls) filterControls.classList.remove('search-focused');
         });
 
         backBtn.addEventListener('click', () => {
@@ -215,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initMagneticButtons() {
-        const buttons = document.querySelectorAll('.glass-btn, .download-btn, #login-btn, #back-btn');
+        const buttons = document.querySelectorAll('.glass-btn, .download-btn, #login-btn, #back-btn, #map-toggle, #map-back-btn');
 
         buttons.forEach(btn => {
             btn.addEventListener('mousemove', (e) => {
@@ -496,7 +536,14 @@ document.addEventListener('DOMContentLoaded', () => {
             window.currentAttractionId = null;
             window.scrollTo({ top: 0, behavior: 'smooth' });
             renderDashboard();
-            switchView(dashboardView);
+            const activeMainView = isMapView ? mapView : dashboardView;
+            switchView(activeMainView);
+            if (isMapView) {
+                setTimeout(() => {
+                    if (!map) initMap();
+                    else map.invalidateSize();
+                }, 450);
+            }
         }
     }
 
@@ -665,4 +712,151 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // --- Map Implementation ---
+    function initMap() {
+        if (typeof L === 'undefined') return;
+
+        // Initialize map centered on Venice
+        map = L.map('venice-map', {
+            zoomControl: false // Custom position later if needed
+        }).setView([45.4340, 12.3380], 14);
+
+        L.control.zoom({
+            position: 'bottomright'
+        }).addTo(map);
+
+        // Add a premium dark/light styled tileset
+        const isLight = document.body.classList.contains('light-theme');
+        setMapTiles(isLight);
+
+        // Listen for theme changes to update map
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class') {
+                    const isLightNow = document.body.classList.contains('light-theme');
+                    setMapTiles(isLightNow);
+                }
+            });
+        });
+        observer.observe(document.body, { attributes: true });
+
+        renderMapMarkers();
+    }
+
+    function setMapTiles(isLight) {
+        if (!map) return;
+        
+        // Remove existing layers
+        map.eachLayer((layer) => {
+            if (layer instanceof L.TileLayer) {
+                map.removeLayer(layer);
+            }
+        });
+
+        // Add new layer based on theme. Using CartoDB for clean, modern look without API keys
+        const tileUrl = isLight 
+            ? 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
+            : 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+            
+        L.tileLayer(tileUrl, {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 19
+        }).addTo(map);
+    }
+
+    function renderMapMarkers() {
+        if (!map) return;
+
+        // Clear existing markers
+        markers.forEach(m => map.removeLayer(m));
+        markers = [];
+
+        const t = translations[currentLang];
+        let keys = Object.keys(t.attractions);
+
+        // Apply filters
+        if (searchTerm) {
+            keys = keys.filter(key => {
+                const item = t.attractions[key];
+                return item.title.toLowerCase().includes(searchTerm) || item.desc.toLowerCase().includes(searchTerm);
+            });
+        }
+        if (showFavoritesOnly) {
+            keys = keys.filter(key => favorites.includes(key));
+        }
+
+        const isLight = document.body.classList.contains('light-theme');
+        const imgKey = isLight ? 'image_light' : 'image_dark';
+
+        keys.forEach(key => {
+            const item = t.attractions[key];
+            const fallbackItem = translations['en'].attractions[key]; // Ensure image exists even if translation is missing it
+            
+            // Centralized coordinates to avoid duplication across all 6 languages
+            const PARSED_COORDS = {
+                'gondola': { lat: 45.4336, lng: 12.3395 },
+                'palazzo_ducale': { lat: 45.4337, lng: 12.3404 },
+                'basilica': { lat: 45.4345, lng: 12.3397 },
+                'rialto': { lat: 45.4337, lng: 12.3373 }, // Museo Correr
+                'campanile': { lat: 45.4340, lng: 12.3386 },
+                'Murano': { lat: 45.4578, lng: 12.3551 },
+                'Burano': { lat: 45.4854, lng: 12.4167 }
+            };
+
+            const coords = item.coords || PARSED_COORDS[key];
+            if (!coords) return; // Skip if no coordinates
+
+            // Custom modern marker icon
+            const customIcon = L.divIcon({
+                className: 'custom-map-marker',
+                html: `<div class="marker-pin"><i class="fas ${favorites.includes(key) ? 'fa-heart' : 'fa-gem'}"></i></div>`,
+                iconSize: [30, 42],
+                iconAnchor: [15, 42],
+                popupAnchor: [0, -35]
+            });
+
+            const marker = L.marker([coords.lat, coords.lng], { icon: customIcon }).addTo(map);
+
+            const imgSrc = item[imgKey] || item.image_dark || fallbackItem[imgKey] || fallbackItem.image_dark || '';
+
+            // Custom Popup content
+            const popupContent = `
+                <div class="map-popup-content">
+                    <img src="${imgSrc}" class="map-popup-img" alt="${item.title}">
+                    <div class="map-popup-info">
+                        <h4 class="map-popup-title">${item.title}</h4>
+                        <a href="javascript:void(0)" onclick="window.location.hash = '${key}'" class="map-popup-btn">
+                            ${currentLang === 'it' ? 'Esplora' : 'Explore'}
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            marker.bindPopup(popupContent, {
+                closeButton: true,
+                minWidth: 220,
+                maxWidth: 220
+            });
+
+            markers.push(marker);
+        });
+
+        // Fit map bounds to show all markers if any exist
+        if (markers.length > 0) {
+            const group = new L.featureGroup(markers);
+            map.fitBounds(group.getBounds().pad(0.1));
+        }
+    }
+
+    // Wrap renderDashboard to also update map markers
+    const originalRenderDashboard = renderDashboard;
+    renderDashboard = function() {
+        originalRenderDashboard();
+        if (isMapView && map) {
+            renderMapMarkers();
+        }
+    };
+
 });
