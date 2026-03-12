@@ -559,7 +559,7 @@ main {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: var(--transition-speed);
+    transition: width 0.3s var(--ease-out), opacity 0.3s var(--ease-out), padding 0.3s var(--ease-out), margin 0.3s var(--ease-out), border 0.3s var(--ease-out), background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
 .filter-controls.search-focused .glass-btn-small {
@@ -1140,6 +1140,16 @@ body.light-theme #detail-image-light {
         width: 100%;
         box-shadow: 0 0 15px rgba(252, 163, 17, 0.2);
     }
+
+    /* Hide map & favorites buttons when search is focused on mobile */
+    .filter-controls.search-focused .glass-btn-small {
+        width: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+        overflow: hidden;
+    }
 }
 
 /* Animations */
@@ -1468,7 +1478,7 @@ body.light-theme #back-btn {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: #1a1a2e;
+    background: #2c3e50;
     border-radius: 40px; /* Match container */
 }
 
