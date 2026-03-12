@@ -717,9 +717,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function initMap() {
         if (typeof L === 'undefined') return;
 
-        // Initialize map centered on Venice
+        // Bounding box covering Venice, Murano, and Burano with generous padding
+        const veniceBounds = L.latLngBounds(
+            L.latLng(45.40, 12.28),  // Southwest corner
+            L.latLng(45.56, 12.44)   // Northeast corner (extra room for Burano popup)
+        );
+
+        // Initialize map centered on Venice, restricted to the lagoon area
         map = L.map('venice-map', {
-            zoomControl: false // Custom position later if needed
+            zoomControl: false,
+            maxBounds: veniceBounds,
+            maxBoundsViscosity: 1.0, // Hard stop at edges — no rubber-banding
+            minZoom: 12,             // Don't zoom out too far
+            tap: true                // Enable tap for mobile popup interaction
         }).setView([45.4340, 12.3380], 14);
 
         L.control.zoom({
@@ -763,7 +773,7 @@ document.addEventListener('DOMContentLoaded', () => {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
             maxZoom: 19,
-            keepBuffer: 6,
+            keepBuffer: 25,
             updateWhenIdle: false,
             updateWhenZooming: false
         }).addTo(map);
@@ -840,7 +850,9 @@ document.addEventListener('DOMContentLoaded', () => {
             marker.bindPopup(popupContent, {
                 closeButton: true,
                 minWidth: 220,
-                maxWidth: 220
+                maxWidth: 220,
+                autoPan: true,
+                autoPanPadding: L.point(40, 60) // Ensure popup stays visible, especially at top
             });
 
             markers.push(marker);

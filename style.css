@@ -1464,13 +1464,11 @@ body.light-theme #back-btn {
     width: 100%;
     position: relative;
     overflow: hidden;
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
+    background: #1a1f2e;
     border-radius: 40px;
     border: 1px solid var(--glass-border);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-    transition: all var(--transition-speed) var(--ease-out);
+    transition: box-shadow var(--transition-speed) var(--ease-out), border-color var(--transition-speed) var(--ease-out);
     padding: 0;
 }
 
@@ -1479,7 +1477,25 @@ body.light-theme #back-btn {
     height: 100%;
     z-index: 1;
     background: #2c3e50;
-    border-radius: 40px; /* Match container */
+    border-radius: 40px;
+}
+
+/* Eliminate tile flash — instant tile display, no fade animation */
+#venice-map .leaflet-fade-anim .leaflet-tile {
+    will-change: transform;
+    transition: none !important;
+    opacity: 1 !important;
+}
+
+/* Keep old tile containers visible until new tiles are ready */
+#venice-map .leaflet-tile-container {
+    will-change: transform;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#venice-map .leaflet-tile-pane {
+    will-change: transform;
 }
 
 #map-back-btn {
