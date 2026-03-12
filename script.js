@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = usernameInput.value.trim();
         const password = passwordInput.value.trim();
 
-        if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+        if (username.toLowerCase() === VALID_USERNAME && password === VALID_PASSWORD) {
             const now = new Date().getTime();
             localStorage.setItem('venice_login_time', now);
             loginError.textContent = "";
