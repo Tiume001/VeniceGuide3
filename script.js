@@ -478,6 +478,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (hash && translations[currentLang].attractions[hash]) {
             window.currentAttractionId = hash;
+            
+            // Immediately scroll window to top before starting animations to avoid glitch
+            window.scrollTo(0, 0); 
+            
             renderDetail(hash);
             switchView(detailView);
 
@@ -486,7 +490,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 const detailInfo = document.querySelector('.detail-info');
                 if (detailInfo) detailInfo.scrollTop = 0;
-                window.scrollTo(0, 0); // Ensure window scrolls to top on mobile
             }, 450);
         } else {
             // Show dashboard and reset state
