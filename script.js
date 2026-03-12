@@ -486,6 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 const detailInfo = document.querySelector('.detail-info');
                 if (detailInfo) detailInfo.scrollTop = 0;
+                window.scrollTo(0, 0); // Ensure window scrolls to top on mobile
             }, 450);
         } else {
             // Show dashboard and reset state
